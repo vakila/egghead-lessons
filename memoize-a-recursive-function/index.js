@@ -17,11 +17,3 @@ function memoFib(n) {
   
   return memoFib.cache[n];
 };
-
-console.time('unmemoized');
-fib(30);
-console.timeEnd('unmemoized');
-
-console.time('memoized');
-memoFib(30);
-console.timeEnd('memoized');
