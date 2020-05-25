@@ -21,9 +21,9 @@ function memoizedFactorial(n) {
 
 
 console.time('unmemoized');
-factorial(300);
+factorial(500);
 console.timeEnd('unmemoized');
 
 console.time('memoized');
-memoizedFactorial(300);
+memoizedFactorial(500);
 console.timeEnd('memoized');
