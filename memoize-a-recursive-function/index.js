@@ -1,29 +1,27 @@
-function factorial(n) {
-  if (n === 0) return 1;
-  return n * factorial(n-1);
+function fib(n) {
+  if (n == 0 || n == 1) return n;
+  return fib(n - 1) + fib(n - 2);
 };
 
-
-function memoizedFactorial(n) {
-  if (!memoizedFactorial.cache) memoizedFactorial.cache = {};
+function memoFib(n) {
+  if (!memoFib.cache) memoFib.cache = {};
   
-  if (!memoizedFactorial.cache[n]) {
+  if (!memoFib.cache[n]) {
     let result;
     
-    if (n === 0) { result = 1; }
-    else { result = n * memoizedFactorial(n-1); }
+    if (n == 0 || n == 1) result = n;
+    else result = memoFib(n - 1) + memoFib(n - 2);
     
-    memoizedFactorial.cache[n] = result;
+    memoFib.cache[n] = result;
   }
   
-  return memoizedFactorial.cache[n];
+  return memoFib.cache[n];
 };
 
-
 console.time('unmemoized');
-factorial(500);
+fib(30);
 console.timeEnd('unmemoized');
 
 console.time('memoized');
-memoizedFactorial(500);
+memoFib(30);
 console.timeEnd('memoized');
