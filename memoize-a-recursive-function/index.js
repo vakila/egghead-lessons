@@ -1,5 +1,5 @@
 function fib(n) {
-  if (n == 0 || n == 1) return n;
+  if (n === 0 || n === 1) return n;
   return fib(n - 1) + fib(n - 2);
 };
 
@@ -9,7 +9,7 @@ function memoFib(n) {
   if (!memoFib.cache[n]) {
     let result;
     
-    if (n == 0 || n == 1) result = n;
+    if (n === 0 || n === 1) result = n;
     else result = memoFib(n - 1) + memoFib(n - 2);
     
     memoFib.cache[n] = result;
